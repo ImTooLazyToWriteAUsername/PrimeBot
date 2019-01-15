@@ -33,7 +33,7 @@ const client = new Discord.Client(); //The name to refer to the bot in code
 
 const config = require("./config.json"); //Requires the config file
 
-const FAQid = "532710788352311306"
+const FAQid = "501433660658941954"
 
 client.commands = new Discord.Collection();
 
