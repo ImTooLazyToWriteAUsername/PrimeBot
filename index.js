@@ -84,24 +84,19 @@ client.on('message', async message => {
 
       --Single keyword--
 
-      test1 = 'keyword';
-      if (message.content.includes(test1)) {
+      if (message.content.includes('keyword')) {
         message.reply("Blah blah blah")
       }
 
       --If it includes one of these keywords--
 
-      test2 = 'keyword';
-      test3 = 'keyword';
-      if (message.content.includes(test2) || message.content.includes(test3)) {
+      if (message.content.includes('keyword') || message.content.includes('keyword')) {
         message.reply("Blah blah blah")
       }
 
       --Must include both keywords--
 
-      test4 = 'keyword';
-      test5 = 'keyword';
-      if (message.content.includes(test4) && message.content.includes(test5)) {
+      if (message.content.includes('keyword') && message.content.includes('keyword')) {
         message.reply("Blah blah blah")
       }
 
