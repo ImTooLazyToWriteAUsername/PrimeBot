@@ -108,8 +108,8 @@ client.on('message', async message => {
       */
 
 
-      forkBlock = '7269';
-      if (message.content.includes(forkBlock)) {
+      
+      if (message.content.includes('7269')) {
         message.reply("It appears you are stuck on the fork block from 12/19/2018. To resolve, delete consensus.db from the Siaprime-UI folder and resync the blockchain.")
       }
 
