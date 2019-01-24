@@ -39,7 +39,7 @@ client.commands = new Discord.Collection();
 
 client.on("ready", () => {
   console.log(`Its prime time`); 
-  client.user.setActivity(`make Sia great again`);
+  client.user.setActivity(`Welcome to SiaPrime!`);
 });
 
 
