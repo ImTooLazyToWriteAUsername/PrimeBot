@@ -70,7 +70,7 @@ client.on('message', async message => {
         message.delete(1);
       }
       else {
-        message.author.send("Here are the list of commands so far integrated into the bot:\n/defrag @user(Optional, You can also run the command **without** tagging a user.)\n/aidrop @user(Optional)\n/mining @user(Optional)\n/hosting @user(Optional)\n/renting @user(Optional)\n/exchange_airdrop @user(Optional)\n\nIf the bot runs into any issues/bugs or crashes/turns off, please message @Gaming Radar101#3404 with the issue as well as what time it happened.")
+        message.author.send("Here is a list of commands for help. You can use @user after the command to include them in the reply.\n/defrag\n/airdrop\n/mining\n/hosting\n/renting\n/exchange_airdrop\n\nIf the bot runs into any issues/bugs or crashes/turns off, please message @Gaming Radar101#3404 with the issue as well as what time it happened.")
         .catch(error => console.log(`Unable to message ${message.author} because of: ${error}`))
         message.delete(1);
       }
