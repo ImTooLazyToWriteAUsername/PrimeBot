@@ -66,7 +66,7 @@ client.on('message', async message => {
   const command = args.shift().toLowerCase();
 
     if(command === "help") {
-      if(!message.member.roles.some(r=>["Guides", "Founders", "Moderators"].includes(r.name)) ) {
+      if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
         message.delete(1);
       }
       else {
@@ -112,7 +112,7 @@ client.on('message', async message => {
 
       if(command === "defrag") {
         let member = message.mentions.members.first();
-        if(!message.member.roles.some(r=>["Guides", "Founders", "Moderators"].includes(r.name)) ) {
+        if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
           message.delete(1);
         }
         else {
@@ -132,7 +132,7 @@ client.on('message', async message => {
 
       if(command === "airdrop") {
         let member = message.mentions.members.first();
-        if(!message.member.roles.some(r=>["Guides", "Founders", "Moderators"].includes(r.name)) ) {
+        if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
           message.delete(1);
         }
         else {
@@ -150,20 +150,40 @@ client.on('message', async message => {
         }
       }
 
-      if(command === "mining") {
+        if(command === "exchange_airdrop") {
         let member = message.mentions.members.first();
-        if(!message.member.roles.some(r=>["Guides", "Founders", "Moderators"].includes(r.name)) ) {
+        if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
           message.delete(1);
         }
         else {
           if (member) {
             message.delete(1);
-            message.channel.send(`Welcome <@${member.user.id}>! To get started with any blake-2b compatible miner, download the SiaPrime wallet from <https://siaprime.net/#download> and choose one (or more) of the excellent SiaPrime pools: \n<http://siaprimestats.com/site/mining>\n<https://intrepidpool.com/site/mining>\n<http://fluxpool.tech/site/mining>\n<https://hyperpool.tech/site/mining>\n<https://prime.siamining.com/help>`)
+            message.channel.send(`<@${member.user.id}>, the SiaPrime team determined that a majority of Siacoins were held in large wallets of exchanges. The goal of an airdrop is to create new community supporters and exchanges showed little interest in distributing the assets. We have subsequently placed these coins into a cold wallet and it is unlikely they will be distributed. The Team will make a decision the disposition of these coins at a future date.`)
+            .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
+            return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Airdrop command in ${message.channel}`);
+          } else {
+            message.delete(1);
+            message.channel.send(`The SiaPrime team determined that a majority of Siacoins were held in large wallets of exchanges. The goal of an airdrop is to create new community supporters and exchanges showed little interest in distributing the assets. We have subsequently placed these coins into a cold wallet and it is unlikely they will be distributed. The Team will make a decision the disposition of these coins at a future date.`)
+            .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
+            return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Exchange Airdrop command in ${message.channel}`);
+          }
+        }
+      }
+  
+      if(command === "mining") {
+        let member = message.mentions.members.first();
+        if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
+          message.delete(1);
+        }
+        else {
+          if (member) {
+            message.delete(1);
+            message.channel.send(`Welcome <@${member.user.id}>! To get started with any Blake2b miner, download the SiaPrime wallet from <https://siaprime.net/#download> and choose one (or more) of these SiaPrime pools: \n<http://siaprimestats.com/site/mining>\n<https://intrepidpool.com/site/mining>\n<http://fluxpool.tech/site/mining>\n<https://hyperpool.tech/site/mining>\n<https://prime.siamining.com/help>`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Mining command in ${message.channel}`);
           } else {
             message.delete(1);
-            message.channel.send(`Welcome! To get started with any blake-2b compatible miner, download the SiaPrime wallet from <https://siaprime.net/#download> and choose one (or more) of the excellent SiaPrime pools: \n<http://siaprimestats.com/site/mining>\n<https://intrepidpool.com/site/mining>\n<http://fluxpool.tech/site/mining>\n<https://hyperpool.tech/site/mining>\n<https://prime.siamining.com/help>`)
+            message.channel.send(`To get started with any Blake2b miner, download the SiaPrime wallet from <https://siaprime.net/#download> and choose one (or more) of these SiaPrime pools: \n<http://siaprimestats.com/site/mining>\n<https://intrepidpool.com/site/mining>\n<http://fluxpool.tech/site/mining>\n<https://hyperpool.tech/site/mining>\n<https://prime.siamining.com/help>`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Mining command in ${message.channel}`);
           }
@@ -172,18 +192,18 @@ client.on('message', async message => {
 
       if(command === "hosting") {
         let member = message.mentions.members.first();
-        if(!message.member.roles.some(r=>["Guides", "Founders", "Moderators"].includes(r.name)) ) {
+        if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
           message.delete(1);
         }
         else {
           if (member) {
             message.delete(1);
-            message.channel.send(`Interested in hosting <@${member.user.id}>? Hosts provide the backbone to our network, and currently qualify for bonus hosting incentives courtesy of the SiaPrime team. Contact Starbuckz8#2126 or FaustianAGI#2657 to get started. For a general overview of hosting, <https://siasetup.info/guides/hosting_on_sia>`)
+            message.channel.send(`Thank you <@${member.user.id}>? for your interest in running a storage node on the SiaPrime network. You qualify for a hosting incentive to help cover the cost of collateral used for hosting. Contact @Starbuckz8#2126 to get started. For a general overview of hosting on the Sia network (same setup, pricing is different on SiaPrime), <https://siasetup.info/guides/hosting_on_sia>`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Hosting command in ${message.channel}`);
           } else {
             message.delete(1);
-            message.channel.send(`Interested in hosting? Hosts provide the backbone to our network, and currently qualify for bonus hosting incentives courtesy of the SiaPrime team. Contact Starbuckz8#2126 or FaustianAGI#2657 to get started. For a general overview of hosting, <https://siasetup.info/guides/hosting_on_sia>`)
+            message.channel.send(`Thank you for your interest in running a storage node on the SiaPrime network. You qualify for a hosting incentive to help cover the cost of collateral used for hosting. Contact @Starbuckz8#2126 to get started. For a general overview of hosting on the Sia network (same setup, pricing is different on SiaPrime) <https://siasetup.info/guides/hosting_on_sia>`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Hosting command in ${message.channel}`);
           }
@@ -192,18 +212,18 @@ client.on('message', async message => {
 
       if(command === "renting") {
         let member = message.mentions.members.first();
-        if(!message.member.roles.some(r=>["Guides", "Founders", "Moderators"].includes(r.name)) ) {
+        if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
           message.delete(1);
         }
         else {
           if (member) {
             message.delete(1);
-            message.channel.send(`Interested in renting space with the SiaPrime network <@${member.user.id}>? Great! There is a general guide here (though written for Sia, it should be very similar) <https://siasetup.info/guides/renting_on_sia>. Please contact any Guides or Founders with questions, and to see if renting is right for your needs.`)
+            message.channel.send(`Interested in renting cloud storage on the SiaPrime network <@${member.user.id}>? There is a general guide here (same setup, pricing is different on SiaPrime) <https://siasetup.info/guides/renting_on_sia>. Please contact the @Guides with any questions.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Renting command in ${message.channel}`);
           } else {
             message.delete(1);
-            message.channel.send(`Interested in renting space with the SiaPrime network? Great! There is a general guide here (though written for Sia, it should be very similar) <https://siasetup.info/guides/renting_on_sia>. Please contact any Guides or Founders with questions, and to see if renting is right for your needs.`)
+            message.channel.send(`Interested in renting cloud storage on the SiaPrime network? There is a general guide here (same setup, pricing is different on SiaPrime) <https://siasetup.info/guides/renting_on_sia>. Please contact the @Guides with any questions.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Renting command in ${message.channel}`);
           }
