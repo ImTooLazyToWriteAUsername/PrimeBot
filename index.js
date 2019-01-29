@@ -66,11 +66,11 @@ client.on('message', async message => {
   const command = args.shift().toLowerCase();
 
     if(command === "help") {
-      if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
+      if(!message.member.roles.some(r=>["Guides", "Team", "Moderators", "TempPerms"].includes(r.name)) ) {
         message.delete(1);
       }
       else {
-        message.author.send("Here are the list of commands so far integrated into the bot:\n/defrag @user(Optional, You can also run the command **without** tagging a user.)\n/aidrop @user(Optional)\n/mining @user(Optional)\n/hosting @user(Optional)\n/renting @user(Optional)\n\nIf the bot runs into any issues/bugs or crashes/turns off, please message @Gaming Radar101#3404 with the issue as well as what time it happened.")
+        message.author.send("Here are the list of commands so far integrated into the bot:\n/defrag @user(Optional, You can also run the command **without** tagging a user.)\n/aidrop @user(Optional)\n/mining @user(Optional)\n/hosting @user(Optional)\n/renting @user(Optional)\n/exchange_airdrop @user(Optional)\n\nIf the bot runs into any issues/bugs or crashes/turns off, please message @Gaming Radar101#3404 with the issue as well as what time it happened.")
         .catch(error => console.log(`Unable to message ${message.author} because of: ${error}`))
         message.delete(1);
       }
