@@ -80,7 +80,7 @@ client.on('message', async message => {
         
       /*
 
-      TEMPLATE
+      TEMPLATE 
 
       --Single keyword--
 
