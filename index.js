@@ -70,7 +70,7 @@ client.on('message', async message => {
         message.delete(1);
       }
       else {
-        message.author.send("Here is a list of commands for help. You can use @user after the command to include them in the reply.\n/defrag\n/airdrop\n/mining\n/hosting\n/renting\n/exchange_airdrop\n\nIf the bot runs into any issues/bugs or crashes/turns off, please message @Gaming Radar101#3404 with the issue as well as what time it happened.")
+        message.author.send("List of help commands. Use @user after the command to include in the reply.\n/defrag\n/airdrop\n/mining\n/hosting\n/renting\n/exchange_airdrop\n\nIf the bot runs into any issues/bugs or crashes/turns off, please message @Gaming Radar101#3404 with the issue as well as what time it happened.")
         .catch(error => console.log(`Unable to message ${message.author} because of: ${error}`))
         message.delete(1);
       }
@@ -118,12 +118,12 @@ client.on('message', async message => {
         else {
           if (member) {
             message.delete(1);
-            message.channel.send(`<@${member.user.id}>, It appears you may have an issue with wallet defragmentation. Behind the scenes the SiaPrime wallet is composed of multiple addresses. Sometimes the wallet will need to move balances within these addresses, which takes a transaction on the network. The 0.088 SCP transaction is the network fee for this transaction.`)
+            message.channel.send(`<@${member.user.id}>, you may have an issue with wallet defragmentation. The SiaPrime wallet is composed of multiple addresses and moves balances to defragment, causing a transaction on the blockchain. The 0.088 SCP transaction is the network fee for this transaction.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Defrag command in ${message.channel}`);
           } else {
             message.delete(1);
-            message.channel.send(`It appears you may have an issue with wallet defragmentation. Behind the scenes the SiaPrime wallet is composed of multiple addresses. Sometimes the wallet will need to move balances within these addresses, which takes a transaction on the network. The 0.088 SCP transaction is the network fee for this transaction.`)
+            message.channel.send(`You may have an issue with wallet defragmentation. The SiaPrime wallet is composed of multiple addresses and moves balances to defragment, causing a transaction on the blockchain. The 0.088 SCP transaction is the network fee for this transaction.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Defrag command in ${message.channel}`);
           }
