@@ -138,12 +138,12 @@ client.on('message', async message => {
         else {
           if (member) {
             message.delete(1);
-            message.channel.send(`Hello <@${member.user.id}>, if you had a SiaCoin (SC) balance as of block 179,000 you’re eligible for the SiaCoin:SiaPrime 5:1 aidrop! Download the SiaPrime-UI wallet here <https://siaprime.net/#download> and simply “Load a wallet from a seed” using your SiaCoin seed for both the seed and the password.`)
+            message.channel.send(`Hello <@${member.user.id}>, if you had a SiaCoin (SC) balance as of block 179,000, you’re eligible for airdropped coins at a ratio of 1SCP for every 5SC in your wallet. Download the SiaPrime-UI wallet here <https://siaprime.net/#download> and simply “Load a wallet from a seed” using your SiaCoin seed for both the seed and the password.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Airdrop command in ${message.channel}`);
           } else {
             message.delete(1);
-            message.channel.send(`Hello, if you had a SiaCoin (SC) balance as of block 179,000 you’re eligible for the SiaCoin:SiaPrime 5:1 aidrop! Download the SiaPrime-UI wallet here <https://siaprime.net/#download> and simply “Load a wallet from a seed” using your SiaCoin seed for both the seed and the password.`)
+            message.channel.send(`Hello, if you had a SiaCoin (SC) balance as of block 179,000, you’re eligible for airdropped coins at a ratio of 1SCP for every 5SC in your wallet. Download the SiaPrime-UI wallet here <https://siaprime.net/#download> and simply “Load a wallet from a seed” using your SiaCoin seed for both the seed and the password.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Airdrop command in ${message.channel}`);
           }
@@ -158,12 +158,12 @@ client.on('message', async message => {
         else {
           if (member) {
             message.delete(1);
-            message.channel.send(`<@${member.user.id}>, the SiaPrime team determined that a majority of Siacoins were held in large wallets of exchanges. The goal of an airdrop is to create new community supporters and exchanges showed little interest in distributing the assets. We have subsequently placed these coins into a cold wallet and it is unlikely they will be distributed. The Team will make a decision the disposition of these coins at a future date.`)
+            message.channel.send(`<@${member.user.id}>, the SiaPrime team determined a majority of Siacoins are held in large exchange wallets. The large Sia exchanges showed little interest in distributing these assets and we have subsequently placed them into cold storage. It is unlikely the exchanges can or will distribute the airdrop in the future.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Airdrop command in ${message.channel}`);
           } else {
             message.delete(1);
-            message.channel.send(`The SiaPrime team determined that a majority of Siacoins were held in large wallets of exchanges. The goal of an airdrop is to create new community supporters and exchanges showed little interest in distributing the assets. We have subsequently placed these coins into a cold wallet and it is unlikely they will be distributed. The Team will make a decision the disposition of these coins at a future date.`)
+            message.channel.send(`the SiaPrime team determined a majority of Siacoins are held in large exchange wallets. The large Sia exchanges showed little interest in distributing these assets and we have subsequently placed them into cold storage. It is unlikely the exchanges can or will distribute the airdrop in the future.`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Exchange Airdrop command in ${message.channel}`);
           }
@@ -198,12 +198,12 @@ client.on('message', async message => {
         else {
           if (member) {
             message.delete(1);
-            message.channel.send(`Thank you <@${member.user.id}>? for your interest in running a storage node on the SiaPrime network. You qualify for a hosting incentive to help cover the cost of collateral used for hosting. Contact @Starbuckz8#2126 to get started. For a general overview of hosting on the Sia network (same setup, pricing is different on SiaPrime), <https://siasetup.info/guides/hosting_on_sia>`)
+            message.channel.send(`Thank you <@${member.user.id}>? for your interest in running a storage node on the SiaPrime network. You qualify for a hosting incentive to help cover the cost of collateral used for hosting. Contact @Starbuckz8#2126 to get started. Visit this link for a general overview of hosting on the Sia network (same setup, pricing is different on SiaPrime), <https://siasetup.info/guides/hosting_on_sia>`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Hosting command in ${message.channel}`);
           } else {
             message.delete(1);
-            message.channel.send(`Thank you for your interest in running a storage node on the SiaPrime network. You qualify for a hosting incentive to help cover the cost of collateral used for hosting. Contact @Starbuckz8#2126 to get started. For a general overview of hosting on the Sia network (same setup, pricing is different on SiaPrime) <https://siasetup.info/guides/hosting_on_sia>`)
+            message.channel.send(`Thank you for your interest in running a storage node on the SiaPrime network. You qualify for a hosting incentive to help cover the cost of collateral used for hosting. Contact @Starbuckz8#2126 to get started. Visit this link for a general overview of hosting on the Sia network (same setup, pricing is different on SiaPrime) <https://siasetup.info/guides/hosting_on_sia>`)
             .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
             return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Hosting command in ${message.channel}`);
           }
