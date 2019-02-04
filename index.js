@@ -229,6 +229,29 @@ client.on('message', async message => {
           }
         }
       }
+            }
+        }
+      }
+
+      if(command === "commands") {
+        let member = message.mentions.members.first();
+        if(!message.member.roles.some(r=>["Guides", "Team", "Moderators"].includes(r.name)) ) {
+          message.delete(1);
+        }
+        else {
+          if (member) {
+            message.delete(1);
+            message.channel.send(`These are the commands for Team, Guides and Moderators <@${member.user.id}>. Here is a list of commands for help. You can use @user after the command to include them in the reply /defrag /airdrop /exchange_airdrop /mining /hosting /renting`)
+            .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
+            return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> tagged <@${member.user.id}> with the Renting command in ${message.channel}`);
+          } else {
+            message.delete(1);
+            message.channel.send(`These are the commands for Team, Guides and Moderators. Here is a list of commands for help. You can use @user after the command to include them in the reply /defrag /airdrop /exchange_airdrop /mining /hosting /renting`)
+            .catch(error => console.log(`Unable to send message ${message.author} because of: ${error}`))
+            return message.guild.channels.find("name", "bot-logs").send(`<@${message.author.id}> used the Renting command in ${message.channel}`);
+          }
+        }
+      }
   });
 
 client.login(config.token);
