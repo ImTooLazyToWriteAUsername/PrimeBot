@@ -1,4 +1,4 @@
-/* Copyright (c) 2018 by Michael Galstyan <mike505222@gmail.com>
+/* Copyright (c) 2018 by KizmoTek <kizmotek@gmail.com>
  * All rights reserved.
  *
  * License: 
